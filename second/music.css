@@ -1,0 +1,210 @@
+*/
+*/
+:root {
+  --primary-color: #31c27c;
+}
+body {
+  /*  设置body的margin为0 */
+  margin: 0;
+  /*  设置body的背景色为#f5f5f5 */
+  background: #f5f5f5;
+   /* 设置body的字体为微软雅黑 */
+  font-family: Microsoft Yahei;
+   /* 设置body的字体大小为14px */
+  font-size: 14px;
+  /* min-width: 1000px; */
+}
+a {
+  /*  去除链接的默认下划线 */
+  text-decoration: none;
+  /* 设置链接颜色 */
+  color: #000;
+}
+*/
+header {
+  /* 设置高度 */
+  height: 90px;
+  /* 设置背景颜色 */
+  background: white;
+  /* 设置flex布局 */
+  display: flex;
+  /* 设置flex布局中元素垂直居中 */
+  align-items: center;
+}
+
+.header-inner, main {
+  /* 设置页面内容区域的高度 */
+  padding: 20px;
+  margin: auto;
+}
+.tag-list {
+  margin-top: 50px;
+  margin-bottom: 15px;
+}
+.tag-item {
+  /* 设置元素的显示方式为行内块 */
+  display: inline-block;
+  /* 设置元素的内边距 */
+  padding: 0 8px;
+  /* 设置元素的外边距，右边距 */
+  margin-right: 24px;
+  /* 设置元素的高度和行高 */
+  line-height: 26px;
+  /* 设置元素的文本颜色 */
+  color: #000;
+  /* 设置元素的文本装饰 */
+  text-decoration: none;
+}
+
+.tag-active {
+  /* 设置背景色为主色调 */
+  background: var(--primary-color);
+   /* 设置文字颜色为白色 */
+  color: white;
+}
+.tag-item:not(.tag-active):hover {
+  /* 鼠标悬浮时改变颜色 */
+  color: var(--primary-color);
+}
+
+.nowrap {
+  /* 设置文本不换行 */
+  white-space: nowrap;
+  /* 设置文本溢出时隐藏 */
+  overflow: hidden;
+  /* 设置文本溢出时显示省略号 */
+  text-overflow: ellipsis;
+}
+*/
+.playlist {
+  /* 设置列表项的布局方式为网格 */
+  display: grid;
+  /* 设置列表项的列数，设置为auto-fill，列宽为200px，最大宽度为1fr */
+  grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+  /* 设置列表项的间距 */
+  gap: 45px 15px;
+  /* 设置列表项的底部间距 */
+  margin-bottom: 45px;
+}
+.cover-wrap {
+  display: flex;
+  /* 将容器设置为弹性盒子布局，使其具有灵活的宽度。 */
+  position: relative;
+  /* 将容器的位置设置为相对定位，以便在其内部定位子元素。 */
+  overflow: hidden;
+  /*隐藏容器内的溢出元素。 */
+  width: 100%;
+  /* 设置容器宽度为100%。 */
+  margin-bottom: 15px;
+  /* 设置容器底部外边距为15像素。 */
+  align-items: center;
+  /* 将子元素在垂直方向上居中。 */
+  justify-content: center;
+  /* 将子元素在水平方向上居中。 */
+  cursor: pointer;
+  /* 设置鼠标悬停时的光标样式。 */
+}
+
+
+.cover-img {
+  width: 100%;
+  /* 设置封面图片的宽度为100% */
+  transition: all 0.75s;
+  /* 设置图片过渡效果，包括宽度、颜色和位置 */
+}
+
+.cover-mask {
+  /* 设置绝对定位 */
+  position: absolute;
+  /* 设置左边距为0 */
+  left: 0;
+  /* 设置上边距为0 */
+  top: 0;
+  /* 设置右边距为0 */
+  right: 0;
+  /* 设置下边距为0 */
+  bottom: 0;
+  /* 设置背景颜色 */
+  background: #000;
+  /* 设置不透明度 */
+  opacity: 0;
+  /* 设置过渡效果 */
+  transition: all 0.5s;
+}
+
+*/
+.cover-play {
+  /* 绝对定位，使其可以被点击 */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  /* 设置点击位置 */
+  margin-left: -35px;
+  margin-top: -35px;
+  /* 设置透明度，并设置缩放 */
+  opacity: 0;
+  transform: scale(0.7);
+  /* 设置过渡效果 */
+  transition: all 0.5s;
+}
+/* 鼠标悬停时，封面图掩码透明度为0.2，播放按钮透明度为1，封面图缩放为1.07，相册标题颜色为主色调，相册作者颜色为灰色，相册时间颜色为灰色 */
+.cover-wrap:hover .cover-mask {
+  opacity: 0.2;
+}
+.cover-wrap:hover .cover-play {
+  opacity: 1;
+  transform: scale(1);
+}
+.cover-wrap:hover .cover-img {
+  transform: scale(1.07);
+}
+.album-title:hover {
+  color: var(--primary-color);
+}
+.album-author {
+  color: #999;
+  line-height: 1.6;
+}
+.album-author:hover {
+  color: var(--primary-color);
+}
+.album-time {
+  color: #999;
+}
+
+.page {
+  /* 设置flex布局，垂直居中 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.page-item {
+  /* 设置行内块元素 */
+  display: inline-block;
+  /* 设置文字颜色 */
+  color: #a2a2a2;
+  /* 设置行高 */
+  line-height: 50px;
+  /* 设置内边距 */
+  padding: 0 20px;
+  /* 设置外边距 */
+  margin: 10px;
+  /* 设置字体大小 */
+  font-size: 16px;
+}
+/* 设置当前页码和普通页码的样式 */
+.page-current, .page-item:not(.page-more):hover {
+  /* 设置背景色 */
+  background: var(--primary-color);
+  /* 设置文字颜色 */
+  color: white;
+}
+*/
+footer {
+  /* 设置页脚距离顶部60px */
+  margin-top: 60px;
+  /* 背景色 */
+  background: #333;
+  /* 高度 */
+  height: 200px;
+}
